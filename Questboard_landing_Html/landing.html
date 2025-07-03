@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>QuestBoard - Turn Tasks into Adventures</title>
+    <link rel="stylesheet" href="landing.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />    <!-- Font Awesome for icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <!-- Three.js for 3D graphics -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="header">
+      <div class="container">
+        <nav class="navbar">
+          <div class="logo">
+            <i class="fas fa-scroll"></i>
+            <span>QuestBoard</span>
+          </div>
+          <ul class="nav-links">
+            <li><a href="#features">Features</a></li>
+            <li><a href="#how-it-works">How It Works</a></li>
+            <li><a href="../QuestBoard_Html/index.html" class="btn btn-nav">Login / Sign Up</a></li>
+            <!-- Updated link to the actual app page -->
+          </ul>
+          <button class="mobile-menu-toggle" id="mobile-menu-toggle">
+            <i class="fas fa-bars"></i>
+          </button>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Mobile Menu (Hidden by default) -->
+    <div class="mobile-menu" id="mobile-menu">
+      <button class="mobile-menu-close" id="mobile-menu-close">
+        <i class="fas fa-times"></i>
+      </button>
+      <ul>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#how-it-works">How It Works</a></li>
+        <li><a href="../QuestBoard_Html/index.html" class="btn btn-nav-mobile">Login / Sign Up</a></li>
+      </ul>
+    </div>    <!-- Hero Section -->
+    <section id="hero" class="hero-section">
+      <canvas id="hero-canvas" class="hero-canvas"></canvas>
+      <div id="hero-loading" class="hero-loading">
+        <div class="loading-spinner"></div>
+        <p>Loading 3D Experience...</p>
+      </div>
+      <div class="container">
+        <div class="hero-content">
+          <h1>Transform Your To-Dos into Exciting Quests</h1>
+          <p class="subtitle">
+            QuestBoard gamifies your tasks, making productivity fun and
+            rewarding for individuals and communities.
+          </p>
+          <a href="../QuestBoard_Html/index.html" class="btn btn-primary btn-lg"
+            >Start Your Adventure <i class="fas fa-arrow-right"></i
+          ></a>
+          <!-- Updated link to the actual app page -->
+        </div>
+        <!-- Floating decorative elements -->
+        <div class="hero-decorations">
+          <div class="floating-icon icon-scroll"><i class="fas fa-scroll"></i></div>
+          <div class="floating-icon icon-tasks"><i class="fas fa-tasks"></i></div>
+          <div class="floating-icon icon-trophy"><i class="fas fa-trophy"></i></div>
+          <div class="floating-icon icon-star"><i class="fas fa-star"></i></div>
+          <div class="floating-icon icon-check"><i class="fas fa-check-circle"></i></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features-section">
+      <div class="container">
+        <h2 class="section-title">Why Choose QuestBoard?</h2>
+
+        <div class="carousel-container" id="features-carousel">
+          <div class="carousel-track">
+            <!-- Slides -->
+            <div class="carousel-slide">
+              <div class="feature-item">
+                <div class="feature-icon"><i class="fas fa-tasks"></i></div>
+                <h3>Organize Everything</h3>
+                <p>
+                  Manage work projects, personal goals, community tasks, and
+                  learning objectives all in one place.
+                </p>
+              </div>
+            </div>
+            <div class="carousel-slide">
+              <div class="feature-item">
+                <div class="feature-icon"><i class="fas fa-trophy"></i></div>
+                <h3>Gamified Motivation</h3>
+                <p>
+                  Earn points for completing quests, track your progress, and
+                  stay motivated to achieve more.
+                </p>
+              </div>
+            </div>
+            <div class="carousel-slide">
+              <div class="feature-item">
+                <div class="feature-icon"><i class="fas fa-users"></i></div>
+                <h3>Community & Collaboration</h3>
+                <p>
+                  Create and share quests within your team, family, or
+                  community. Work together towards common goals.
+                </p>
+              </div>
+            </div>
+            <div class="carousel-slide">
+              <div class="feature-item">
+                <div class="feature-icon"><i class="fas fa-filter"></i></div>
+                <h3>Flexible Filtering</h3>
+                <p>
+                  Easily sort and filter quests by category, status, reward, or
+                  deadline to focus on what matters most.
+                </p>
+              </div>
+            </div>
+            <!-- Add more slides if needed -->
+          </div>
+          <div class="carousel-dots" id="features-dots">
+            <!-- Dots will be generated by JS -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section id="how-it-works" class="how-it-works-section">
+      <div class="container">
+        <h2 class="section-title">Get Started in Minutes</h2>
+        <div class="steps-container">
+          <div class="step-item">
+            <div class="step-number">1</div>
+            <i class="fas fa-plus-circle step-icon"></i>
+            <h3>Create a Quest</h3>
+            <p>
+              Define your task, set a reward, categorize it, and add details.
+            </p>
+          </div>
+          <div class="step-connector"></div>
+          <div class="step-item">
+            <div class="step-number">2</div>
+            <i class="fas fa-check-circle step-icon"></i>
+            <h3>Accept & Complete</h3>
+            <p>
+              Browse available quests, accept challenges, and mark them done.
+            </p>
+          </div>
+          <div class="step-connector"></div>
+          <div class="step-item">
+            <div class="step-number">3</div>
+            <i class="fas fa-award step-icon"></i>
+            <h3>Earn Rewards</h3>
+            <p>Collect points for completed quests and watch your score grow!</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Call to Action Section -->
+    <section id="cta" class="cta-section">
+      <div class="container">
+        <h2>Ready to Level Up Your Productivity?</h2>
+        <p>Join QuestBoard today and start turning your goals into achievements.</p>
+        <a href="../QuestBoard_Html/index.html" class="btn btn-primary btn-lg"
+          >Get Started Now <i class="fas fa-rocket"></i
+        ></a>
+        <!-- Updated link to the actual app page -->
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="logo">
+            <i class="fas fa-scroll"></i>
+            <span>QuestBoard</span>
+          </div>
+          <p>&copy; 2025 QuestBoard. All rights reserved.</p>
+          <div class="social-links">
+            <a href="https://twitter.com/questboard" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="https://instagram.com/questboard" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://facebook.com/questboard" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://linkedin.com/company/questboard" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://discord.gg/questboard" aria-label="Discord"><i class="fab fa-discord"></i></a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="landing.js"></script>
+  </body>
+</html>

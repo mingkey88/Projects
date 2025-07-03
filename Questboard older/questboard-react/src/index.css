@@ -1,0 +1,89 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .sidebar {
+    @apply fixed left-0 top-0 h-full w-64 bg-white p-4 shadow-md z-10;
+  }
+  
+  .main-content {
+    @apply ml-64 p-6 bg-background min-h-screen;
+  }
+  
+  .btn {
+    @apply px-4 py-2 rounded-md font-medium transition-colors;
+  }
+  
+  .btn-post {
+    @apply bg-primary text-white hover:bg-primary-hover;
+  }
+  
+  .btn-apply {
+    @apply bg-primary text-white hover:bg-primary-hover;
+  }
+  
+  .btn-reset {
+    @apply bg-gray-200 text-gray-700 hover:bg-gray-300;
+  }
+  
+  .quest-card {
+    @apply bg-card rounded-lg shadow-card overflow-hidden transition-all hover:shadow-lg border border-gray-100;
+  }
+  
+  .quest-card-image {
+    @apply bg-gray-100 h-24 flex items-center justify-center;
+  }
+  
+  .category-icon {
+    @apply text-3xl text-primary;
+  }
+  
+  .quest-card-content {
+    @apply p-4;
+  }
+  
+  .quest-card-title {
+    @apply text-lg font-medium mb-2 text-gray-800;
+  }
+  
+  .quest-card-details {
+    @apply mb-3;
+  }
+  
+  .category-pill {
+    @apply inline-block px-2 py-1 text-xs rounded-full text-white bg-gray-500;
+  }
+  
+  .category-pill.work {
+    @apply bg-blue-500;
+  }
+  
+  .category-pill.personal {
+    @apply bg-purple-500;
+  }
+  
+  .category-pill.community {
+    @apply bg-green-500;
+  }
+  
+  .category-pill.learning {
+    @apply bg-yellow-500;
+  }
+  
+  .category-pill.other {
+    @apply bg-gray-500;
+  }
+  
+  .quest-card-footer {
+    @apply flex justify-between text-sm text-gray-600;
+  }
+  
+  .chip {
+    @apply px-3 py-1 rounded-full text-sm font-medium bg-gray-200 text-gray-700 cursor-pointer hover:bg-gray-300 transition-colors;
+  }
+  
+  .chip.active {
+    @apply bg-primary text-white;
+  }
+}

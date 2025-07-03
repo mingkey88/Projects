@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Witcher Contracts - To-Do List</title>
+    <link rel="stylesheet" href="style.css" />
+    <!-- Optional: Link to a Witcher-like font from Google Fonts or local -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="witcher-container">
+      <h1>Notice Board - Contracts</h1>
+
+      <form id="add-contract-form">
+        <input
+          type="text"
+          id="contract-input"
+          placeholder="Post a new Contract..."
+          required
+          aria-label="New contract description"
+        />
+        <button type="submit" id="add-contract-btn">Accept Contract</button>
+      </form>
+
+      <ul id="contract-list">
+        <!-- Contracts will be added here by JavaScript -->
+      </ul>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

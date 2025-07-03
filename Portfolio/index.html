@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ming Jie - Portfolio</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+  </head>  <body>
+    <!-- Right Side Navigation Bar -->
+    <nav class="navbar" id="navbar">
+      <div class="nav-container">
+        <div class="nav-logo">
+          <i class="fas fa-code"></i>
+          <span>Ming Jie</span>
+        </div>
+        
+        <ul class="nav-menu" id="nav-menu">
+          <li class="nav-item">
+            <a href="#hero" class="nav-link">
+              <i class="fas fa-home"></i>
+              <span>Home</span>
+            </a>
+          </li>          <li class="nav-item">
+            <a href="#video-reel" class="nav-link">
+              <i class="fas fa-play-circle"></i>
+              <span>Video Reel</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#gallery-2d" class="nav-link">
+              <i class="fas fa-images"></i>
+              <span>2D Gallery</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#about" class="nav-link">
+              <i class="fas fa-user"></i>
+              <span>About</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#projects" class="nav-link">
+              <i class="fas fa-briefcase"></i>
+              <span>Projects</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#contact" class="nav-link">
+              <i class="fas fa-envelope"></i>
+              <span>Contact</span>
+            </a>
+          </li>
+        </ul>
+        
+        <div class="nav-actions">
+          <button class="theme-toggle" id="theme-toggle">
+            <i class="fas fa-moon"></i>
+          </button>
+          <div class="hamburger" id="hamburger">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+          </div>
+        </div>
+      </div>
+    </nav><!-- 3D Hero Section -->
+    <section class="hero-section" id="hero">
+      <canvas id="hero-canvas"></canvas>
+      <div class="hero-content">        <div class="hero-text">
+          <h1 class="hero-title">
+            <span class="hero-name" id="hero-name-typing"></span>
+            <span class="hero-role">Full Stack Developer</span>
+          </h1>
+          <p class="hero-description">
+            Crafting digital experiences with modern technologies and creative solutions
+          </p>
+        </div>        <div class="hero-profile">
+          <div class="hero-profile-image">
+            <img
+              src="https://cdn.midjourney.com/21a9289f-8380-4d38-b02b-f6f3744e1053/0_0.png"
+              alt="Ming Jie"
+              class="hero-avatar"
+            />
+          </div>
+        </div>
+        <div class="scroll-indicator">
+          <div class="scroll-arrow">
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <span>Scroll to explore</span>
+        </div>
+      </div>    </section>    <!-- Video Reel Section -->
+    <section class="section" id="video-reel">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">My Reel</h2>
+          <p class="section-subtitle">A showcase of my creative work</p>
+        </div>        <div class="video-reel-container single-video">
+          <div class="video-item">
+            <div class="video-thumbnail">
+              <video 
+                class="video-preview"
+                controls
+                preload="metadata"
+                poster="https://images.unsplash.com/photo-1611224923853-80b023f02d71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+              >              <source src="Video/Merge videos project.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+            </div>
+            <h3 class="video-title">My Reel</h3>
+            <p class="video-description">A compilation of my best creative work and projects</p>
+          </div>        </div>
+      </div>
+    </section>
+
+    <!-- 2D Work Carousel Section -->
+    <section class="section" id="gallery-2d">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">2D Gallery</h2>
+          <p class="section-subtitle">A collection of my digital artwork and illustrations</p>
+        </div>
+        <div class="carousel-container">
+          <div class="carousel-wrapper">
+            <div class="carousel-track" id="carousel-track">
+              <div class="carousel-slide">
+                <img src="https://cdn.midjourney.com/a6d2f5cd-31a5-44d4-8f3b-74cb5628a82b/0_0.png" alt="Digital Art 1" class="carousel-image">
+              </div>
+              <div class="carousel-slide">
+                <img src="https://cdn.midjourney.com/63ad66e0-20c7-40ed-803c-e4f43d1fb9a6/0_0.png" alt="Digital Art 2" class="carousel-image">
+              </div>
+              <div class="carousel-slide">
+                <img src="https://cdn.midjourney.com/176e89d4-baef-4631-ac68-1aecec5154ac/0_0.png" alt="Digital Art 3" class="carousel-image">
+              </div>
+              <div class="carousel-slide">
+                <img src="https://cdn.midjourney.com/39a7f3d1-2357-45f3-904b-35fbe5b38102/0_0.png" alt="Digital Art 4" class="carousel-image">
+              </div>
+              <div class="carousel-slide">
+                <img src="https://cdn.midjourney.com/74e18401-0145-4652-a242-bf379a71f3b5/0_0.png" alt="Digital Art 5" class="carousel-image">
+              </div>
+              <div class="carousel-slide">
+                <img src="https://cdn.midjourney.com/2f1ab95e-d121-4ade-ae2f-238a41f77cbe/0_0.png" alt="Digital Art 6" class="carousel-image">
+              </div>
+              <div class="carousel-slide">
+                <img src="https://cdn.midjourney.com/891d4a7e-a183-4c78-829f-70e27dfbb0b0/0_0.png" alt="Digital Art 7" class="carousel-image">
+              </div>
+              <div class="carousel-slide">
+                <img src="https://cdn.midjourney.com/a4b0fcdb-6017-4448-8ba8-81a32bccb850/0_0.png" alt="Digital Art 8" class="carousel-image">
+              </div>
+              <div class="carousel-slide">
+                <img src="https://cdn.midjourney.com/79dd41b5-d076-4351-95c2-a47e407cc343/0_0.png" alt="Digital Art 9" class="carousel-image">
+              </div>
+              <div class="carousel-slide">
+                <img src="https://cdn.midjourney.com/c8d80e50-88c5-48fd-9078-0167ce800a66/0_0.png" alt="Digital Art 10" class="carousel-image">
+              </div>
+              <div class="carousel-slide">
+                <img src="https://cdn.midjourney.com/8beea39f-1909-4015-ad16-63bad1e7d230/0_0.png" alt="Digital Art 11" class="carousel-image">
+              </div>              <div class="carousel-slide">
+                <img src="https://cdn.midjourney.com/b1872d7a-828c-4374-abca-18ef05012541/0_0.png" alt="Digital Art 12" class="carousel-image">
+              </div>
+              <div class="carousel-slide">
+                <img src="https://cdn.midjourney.com/654b6e48-ea22-4c9a-8994-146f3c7be0aa/0_0.png" alt="Digital Art 13" class="carousel-image">
+              </div>
+              <div class="carousel-slide">
+                <img src="https://cdn.midjourney.com/3071d352-324e-48be-975b-b557db965ec3/0_0.png" alt="Digital Art 14" class="carousel-image">
+              </div>
+              <div class="carousel-slide">
+                <img src="https://cdn.midjourney.com/a4621d08-cdac-40d4-861c-8aff7faaa750/0_0.png" alt="Digital Art 15" class="carousel-image">
+              </div>
+              <div class="carousel-slide">
+                <img src="https://cdn.midjourney.com/1daaa921-659b-4d9f-9394-31967d37954f/0_0.png" alt="Digital Art 16" class="carousel-image">
+              </div>
+              <div class="carousel-slide">
+                <img src="https://cdn.midjourney.com/6e68d23d-1db4-43d9-a36e-01875761f1cc/0_0.png" alt="Digital Art 17" class="carousel-image">
+              </div>
+            </div>
+          </div>
+          <button class="carousel-btn carousel-btn-prev" id="carousel-prev">
+            <i class="fas fa-chevron-left"></i>
+          </button>
+          <button class="carousel-btn carousel-btn-next" id="carousel-next">
+            <i class="fas fa-chevron-right"></i>
+          </button>
+          <div class="carousel-indicators" id="carousel-indicators">
+            <!-- Indicators will be generated by JavaScript -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About & Skills Section -->
+    <section class="section" id="about">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">About Me & Skills</h2>
+          <p class="section-subtitle">Get to know me and what I work with</p>
+        </div>
+        <div class="about-skills-container">
+          <div class="profile-section">
+            <div class="profile-header">              <div class="profile-info">
+                <h3 class="profile-name">Ming Jie</h3>
+                <p class="profile-tagline">CG artist & Full Stack Web Developer</p>
+                <p class="profile-description">
+                  Passionate developer with expertise in modern web
+                  technologies. I love creating innovative solutions and
+                  bringing ideas to life through code.
+                </p>
+                <div class="skills-category">
+                  <h4 class="skills-category-title">Design & Media</h4>
+                  <div class="skills-list">
+                    <div class="skill-item">
+                      <span class="skill-name">Adobe Photoshop</span>
+                    </div>
+                    <div class="skill-item">
+                      <span class="skill-name">Adobe After Effects</span>
+                    </div>
+                    <div class="skill-item">
+                      <span class="skill-name">Blender</span>
+                    </div>
+                    <div class="skill-item upcoming">
+                      <span class="skill-name">Unreal Engine</span>
+                      <span class="skill-badge">Upcoming</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="social-links">
+                  <a href="#" class="social-icon">
+                    <i class="fab fa-github"></i>
+                  </a>
+                  <a href="#" class="social-icon">
+                    <i class="fab fa-linkedin"></i>
+                  </a>
+                  <a href="#" class="social-icon">
+                    <i class="fab fa-twitter"></i>
+                  </a>
+                  <a
+                    href="https://www.instagram.com/mingkey88/"
+                    class="social-icon"
+                  >
+                    <i class="fab fa-instagram"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>          <div class="skills-section">
+            <h3 class="skills-section-title">Technologies & Skills</h3>
+            <div class="skills-container">
+              <div class="skills-category">
+                <h4 class="skills-category-title">Frontend</h4>
+                <div class="skills-list">
+                  <div class="skill-item">
+                    <span class="skill-name">React</span>
+                  </div>                  <div class="skill-item">
+                    <span class="skill-name">JavaScript</span>
+                  </div>
+                  <div class="skill-item">
+                    <span class="skill-name">CSS</span>
+                  </div>
+                </div>
+              </div>
+              <div class="skills-category">
+                <h4 class="skills-category-title">Backend</h4>
+                <div class="skills-list">
+                  <div class="skill-item">
+                    <span class="skill-name">Node.js</span>
+                  </div>
+                  <div class="skill-item">
+                    <span class="skill-name">Python</span>
+                  </div>
+                  <div class="skill-item">
+                    <span class="skill-name">MongoDB</span>
+                  </div>                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="section" id="projects">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">My Projects</h2>
+          <p class="section-subtitle">Explore my recent work</p>
+        </div>
+        <div class="category-chips">
+          <button class="chip active" data-filter="all">All</button>
+          <button class="chip" data-filter="2d">2D Work</button>
+          <button class="chip" data-filter="3d">3D Work</button>
+          <button class="chip" data-filter="web">Web Apps</button>
+        </div>
+        <div class="projects-grid" id="projects-grid">
+          <!-- Projects will be dynamically loaded -->
+        </div>
+      </div>    </section>
+
+    <!-- Contact Section -->
+    <section class="section" id="contact">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Get In Touch</h2>
+          <p class="section-subtitle">Let's work together</p>
+        </div>
+        <div class="contact-container">
+          <div class="contact-info">
+            <h3>Let's Connect</h3>
+            <p>
+              I'm always interested in new opportunities and exciting
+              projects. Let's connect!
+            </p>
+            <div class="contact-methods">
+              <div class="contact-method">
+                <i class="fas fa-envelope"></i>
+                <span>ming.jie@example.com</span>
+              </div>
+              <div class="contact-method">
+                <i class="fas fa-phone"></i>
+                <span>+1 (555) 123-4567</span>
+              </div>
+              <div class="contact-method">
+                <i class="fas fa-map-marker-alt"></i>
+                <span>San Francisco, CA</span>
+              </div>
+            </div>
+          </div>
+          <form class="contact-form" id="contact-form">
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input type="text" id="name" name="name" required />
+            </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" required />
+            </div>
+            <div class="form-group">
+              <label for="subject">Subject</label>
+              <input type="text" id="subject" name="subject" required />
+            </div>
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea
+                id="message"
+                name="message"
+                rows="5"
+                required
+              ></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">
+              <i class="fas fa-paper-plane"></i>
+              Send Message
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Project Details Panel -->
+    <div class="project-details-panel" id="project-details-panel">
+      <div class="panel-header">
+        <h2>Project Details</h2>
+        <button class="close-btn" id="close-details-panel">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+      <div id="project-details-content">
+        <p class="details-placeholder">Select a project to view details</p>
+      </div>
+    </div>
+
+    <!-- Overlay -->
+    <div class="overlay" id="overlay"></div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

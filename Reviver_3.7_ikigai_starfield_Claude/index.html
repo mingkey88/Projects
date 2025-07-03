@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Reviver: Gundam Edition</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app-container">
+    <!-- Left Sidebar (Navigation) -->
+    <aside class="left-sidebar">
+      <div class="logo-area">
+        <div class="logo-placeholder">🤖</div>
+        <span>Reviver</span>
+      </div>
+      <button class="menu-toggle-mobile" aria-label="Open navigation">☰</button>
+      <nav role="navigation" aria-label="Main">
+        <ul>
+          <li><a href="#" data-view="dashboard" class="sidebar-link active-link" tabindex="0" role="menuitem">🛰️<span>Command Deck</span></a></li>
+          <li><a href="#" data-view="quests" class="sidebar-link" tabindex="0" role="menuitem">🪐<span>Mission Board</span></a></li>
+          <li><a href="#" data-view="profile" class="sidebar-link" tabindex="0" role="menuitem">👩‍🚀<span>Explorer Profile</span></a></li>
+          <li><a href="#" data-view="skills" class="sidebar-link" tabindex="0" role="menuitem">🌌<span>Star Map</span></a></li>
+          <li><a href="#" data-view="journey" class="sidebar-link" tabindex="0" role="menuitem">🛰️<span>Journey Log</span></a></li>
+          <li><a href="#" data-view="friends" class="sidebar-link" tabindex="0" role="menuitem">🤝<span>Crew</span></a></li>
+          <li><a href="#" data-view="wisdom" class="sidebar-link" tabindex="0" role="menuitem">🔭<span>Wisdom Feed</span></a></li>
+          <li><a href="#" data-view="kindness" class="sidebar-link" tabindex="0" role="menuitem">💖<span>Alliance Board</span></a></li>
+        </ul>
+      </nav>
+      <div class="sidebar-bottom">
+        <a href="#" data-view="settings" class="sidebar-link" tabindex="0" role="menuitem">⚙️<span>Settings</span></a>
+      </div>
+    </aside>
+    <div class="sidebar-overlay"></div>
+    <div class="main-wrapper">
+      <!-- Top Bar -->
+      <header class="top-bar">
+        <div class="top-bar-left">
+          <button class="button primary small">+ Add Mission</button>
+        </div>
+        <div class="top-bar-right">
+          <button class="theme-toggle" aria-label="Toggle theme">🌙</button>
+          <div class="user-info dropdown" tabindex="0" aria-haspopup="true" aria-expanded="false">
+            <span>Commander</span>
+            <div class="avatar-placeholder small">🧑‍🚀</div>
+            <div class="user-dropdown" role="menu" aria-label="User menu">
+              <a href="#" tabindex="0" role="menuitem">Profile</a>
+              <a href="#" tabindex="0" role="menuitem">Logout</a>
+            </div>
+          </div>
+        </div>
+      </header>
+      <div class="content-area">
+        <main class="center-content">
+          <!-- Dashboard View -->
+          <div id="dashboard-view" class="view-section active-view">
+            <h1 class="view-title">Welcome to the Command Deck!</h1>
+            <section class="hero-section card animate-on-scroll">
+              <div class="hero-text">
+                <h4>
+                  <span class="highlight">Mission Control</span> AI Suggestion
+                </h4>
+                <h2>Balance your systems. Try a 5-min Mindfulness Mission:</h2>
+                <p>🔭 +10 Insight XP</p>
+                <button class="button primary">Mark Complete</button>
+              </div>
+              <div class="hero-image-placeholder">🪐</div>
+            </section>
+            <h2 class="section-title">Today's Missions (Command: Coding)</h2>
+            <div class="quest-grid">
+              <article class="quest-card card animate-on-scroll">
+                <div class="quest-card-header">
+                  <span>🚀 Code Navigation Module</span>
+                  <span class="xp-reward">+20 Command XP</span>
+                </div>
+                <p class="quest-details">Duration: 30 minutes</p>
+                <div class="quest-card-footer">
+                  <button class="button secondary small">Mark Complete</button>
+                </div>
+              </article>
+              <article class="quest-card card animate-on-scroll">
+                <div class="quest-card-header">
+                  <span>🔭 Study Star Algorithms</span>
+                  <span class="xp-reward">+30 Insight XP</span>
+                </div>
+                <p class="quest-details">Source: Frontend Masters</p>
+                <div class="quest-card-footer">
+                  <button class="button secondary small">Mark Complete</button>
+                </div>
+              </article>
+            </div>
+          </div>
+          <!-- Other Views (Placeholders) -->
+          <div id="quests-view" class="view-section">
+            <h1 class="view-title">Mission Board</h1>
+            <p class="placeholder-text">Your upcoming missions will appear here.</p>
+          </div>
+          <div id="profile-view" class="view-section">
+            <h1 class="view-title">Explorer Profile</h1>
+            <p class="placeholder-text">Profile Content Placeholder...</p>
+          </div>
+          <div id="skills-view" class="view-section">
+            <h1 class="view-title">Star Map</h1>
+            <p class="placeholder-text">Star Map Content Placeholder...</p>
+          </div>
+          <div id="journey-view" class="view-section">
+            <h1 class="view-title">Journey Log</h1>
+            <div class="timeline">
+              <div class="timeline-item completed">
+                <div class="timeline-marker"></div>
+                <div class="timeline-content">
+                  <h3>Launched Command Path</h3>
+                  <p>Started your journey as a pilot</p>
+                  <span class="timeline-date">2 days ago</span>
+                </div>
+              </div>
+              <div class="timeline-item completed">
+                <div class="timeline-marker"></div>
+                <div class="timeline-content">
+                  <h3>First Mission Complete</h3>
+                  <p>Completed your first coding task</p>
+                  <span class="timeline-date">1 day ago</span>
+                </div>
+              </div>
+              <div class="timeline-item current">
+                <div class="timeline-marker"></div>
+                <div class="timeline-content">
+                  <h3>Current Mission</h3>
+                  <p>Working on navigation systems</p>
+                  <span class="timeline-date">In progress</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div id="friends-view" class="view-section">
+            <h1 class="view-title">Crew</h1>
+            <p class="placeholder-text">Crew Content Placeholder...</p>
+          </div>
+          <div id="wisdom-view" class="view-section">
+            <h1 class="view-title">Wisdom Feed</h1>
+            <div class="wisdom-feed">
+              <article class="wisdom-card card animate-on-scroll">
+                <blockquote>
+                  "The stars don't tell the future. They tell stories."
+                </blockquote>
+                <div class="wisdom-meta">— Starfield Lore</div>
+              </article>
+              <article class="wisdom-card card animate-on-scroll">
+                <blockquote>
+                  "Every great journey begins with a single launch."
+                </blockquote>
+                <div class="wisdom-meta">— Reviver Explorer</div>
+              </article>
+              <article class="wisdom-card card animate-on-scroll">
+                <blockquote>
+                  "You are the captain of your fate, the pilot of your soul."
+                </blockquote>
+                <div class="wisdom-meta">— Adapted from Invictus</div>
+              </article>
+              <article class="wisdom-card card animate-on-scroll">
+                <blockquote>
+                  "Progress is not a straight line. Even the best pilots course-correct."
+                </blockquote>
+                <div class="wisdom-meta">— Mission Control</div>
+              </article>
+              <article class="wisdom-card card animate-on-scroll">
+                <blockquote>
+                  "Look up. There's always another star to reach for."
+                </blockquote>
+                <div class="wisdom-meta">— Reviver Wisdom</div>
+              </article>
+            </div>
+          </div>
+          <div id="kindness-view" class="view-section">
+            <h1 class="view-title">Alliance Board</h1>
+            <div class="kindness-feed">
+              <article class="kindness-card card animate-on-scroll">
+                <div class="kindness-action">
+                  <span class="kindness-icon">🤝</span>
+                  <span><strong>Nova</strong> helped a new crew member learn the ropes.</span>
+                </div>
+                <div class="kindness-meta">2 hours ago</div>
+              </article>
+              <article class="kindness-card card animate-on-scroll">
+                <div class="kindness-action">
+                  <span class="kindness-icon">🪐</span>
+                  <span><strong>Orion</strong> shared a resource map with the team.</span>
+                </div>
+                <div class="kindness-meta">Today</div>
+              </article>
+              <article class="kindness-card card animate-on-scroll">
+                <div class="kindness-action">
+                  <span class="kindness-icon">🌌</span>
+                  <span><strong>Lyra</strong> organized a virtual stargazing event.</span>
+                </div>
+                <div class="kindness-meta">Yesterday</div>
+              </article>
+              <article class="kindness-card card animate-on-scroll">
+                <div class="kindness-action">
+                  <span class="kindness-icon">📡</span>
+                  <span><strong>You</strong> sent a signal of encouragement to a friend.</span>
+                </div>
+                <div class="kindness-meta">Just now</div>
+              </article>
+              <article class="kindness-card card animate-on-scroll">
+                <div class="kindness-action">
+                  <span class="kindness-icon">💖</span>
+                  <span>"No act of kindness, no matter how small, is ever wasted."</span>
+                </div>
+                <div class="kindness-meta">Alliance Tip</div>
+              </article>
+            </div>
+          </div>
+          <div id="settings-view" class="view-section">
+            <h1 class="view-title">Settings</h1>
+            <p class="placeholder-text">Settings Content Placeholder...</p>
+          </div>
+        </main>
+        <aside class="right-sidebar visible">
+          <div class="sidebar-section">
+            <h4>Overview</h4>
+            <div class="overview-card card">
+              <div class="stat-line">
+                <span>Command:</span><strong>🤖 Lvl 1</strong>
+              </div>
+              <div class="stat-bar-container compact">
+                <div class="progress-bar-bg">
+                  <div class="progress-bar command" style="width: 15%"></div>
+                </div>
+                <span>15/100 XP</span>
+              </div>
+              <div class="stat-line">
+                <span>Insight:</span><strong>🔭 Lvl 1</strong>
+              </div>
+              <div class="stat-bar-container compact">
+                <div class="progress-bar-bg">
+                  <div class="progress-bar insight" style="width: 5%"></div>
+                </div>
+                <span>5/50 XP</span>
+              </div>
+              <div class="stat-line">
+                <span>Endurance:</span><strong>🛡️ Lvl 1</strong>
+              </div>
+              <div class="stat-bar-container compact">
+                <div class="progress-bar-bg">
+                  <div class="progress-bar endurance" style="width: 10%"></div>
+                </div>
+                <span>10/100 XP</span>
+              </div>
+              <div class="stat-line">
+                <span>Resolve:</span><strong>🔥 Lvl 1</strong>
+              </div>
+              <div class="stat-bar-container compact">
+                <div class="progress-bar-bg">
+                  <div class="progress-bar resolve" style="width: 8%"></div>
+                </div>
+                <span>8/100 XP</span>
+              </div>
+              <div class="stat-line">
+                <span>Alliance:</span><strong>🤝 Lvl 1</strong>
+              </div>
+              <div class="stat-bar-container compact">
+                <div class="progress-bar-bg">
+                  <div class="progress-bar alliance" style="width: 12%"></div>
+                </div>
+                <span>12/100 XP</span>
+              </div>
+              <div class="stat-line">
+                <span>Mission Streak:</span><strong class="streak-display">🌟 3 Days</strong>
+              </div>
+            </div>
+          </div>
+          <div class="sidebar-section">
+            <h4>Recent Milestones</h4>
+            <div class="activity-feed card">
+              <div class="feed-item">
+                <span class="feed-icon">🤖</span>
+                <p>
+                  Launched Command Path: Coding
+                  <span class="timestamp">2d ago</span>
+                </p>
+              </div>
+              <div class="feed-item">
+                <span class="feed-icon">🌟</span>
+                <p>
+                  Achieved 3-Day Mission Streak!
+                  <span class="timestamp">Now</span>
+                </p>
+              </div>
+              <div class="feed-item">
+                <span class="feed-icon">🔭</span>
+                <p>
+                  Reached Insight Level 1 <span class="timestamp">1d ago</span>
+                </p>
+              </div>
+              <a href="#" onclick="showView('journey'); return false;" class="view-all-link">View Full Journey ➔</a>
+            </div>
+          </div>
+          <div class="sidebar-section">
+            <h4>Patches</h4>
+            <div class="badge-display card">
+              <div class="badge" data-tooltip="Launched your first mission path">🤖<br />Path Launched</div>
+              <div class="badge" data-tooltip="Completed missions for 3 days in a row">🌟<br />3-Day Streak</div>
+              <div class="badge locked" data-tooltip="Complete 10 missions to unlock">🔒<br />Veteran</div>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

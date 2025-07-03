@@ -1,0 +1,37 @@
+reviver-react-app/
+├── public/
+│   └── (static assets like favicon)
+├── src/
+│   ├── assets/
+│   │   └── (images, fonts, etc. - maybe your starry background if not CSS)
+│   ├── components/
+│   │   ├── LeftSidebar.jsx
+│   │   ├── TopBar.jsx
+│   │   ├── RightSidebar.jsx
+│   │   ├── Card.jsx
+│   │   ├── Button.jsx
+│   │   ├── QuestCard.jsx
+│   │   ├── WisdomCard.jsx
+│   │   ├── KindnessCard.jsx
+│   │   ├── Timeline.jsx
+│   │   ├── Badge.jsx
+│   │   ├── Tooltip.jsx
+│   │   └── Notification.jsx
+│   ├── views/
+│   │   ├── DashboardView.jsx
+│   │   ├── QuestsView.jsx
+│   │   ├── ProfileView.jsx
+│   │   ├── SkillsView.jsx
+│   │   ├── JourneyView.jsx
+│   │   ├── FriendsView.jsx
+│   │   ├── WisdomView.jsx
+│   │   ├── KindnessView.jsx
+│   │   ├── SettingsView.jsx
+│   ├── hooks/
+│   │   └── useLocalStorage.js  (For theme persistence)
+│   ├── App.jsx               (Main layout and routing logic)
+│   ├── index.css             (Your main CSS styles)
+│   └── main.jsx              (Entry point)
+├── index.html            (Vite's root HTML)
+├── package.json
+└── vite.config.js

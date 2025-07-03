@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>QuestBoard - Community Quests</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  </head>
+  <body>
+    <div class="app-container">
+      <!-- Left Navigation Sidebar -->
+      <nav class="sidebar">
+        <div class="logo">
+          <i class="fas fa-scroll"></i>
+          <span>QuestBoard</span>
+        </div>
+        <ul class="nav-links">
+          <li>
+            <a href="../Questboard_landing_Html/landing.html"><i class="fas fa-home"></i><span>Home</span></a>
+          </li>
+          <li>
+            <a href="#" id="profile-link"><i class="fas fa-user-circle"></i><span>My Profile</span></a>
+          </li>
+          <li>
+            <a href="#" id="library-link"><i class="fas fa-book"></i><span>My Quests</span></a>
+          </li>
+          <li class="nav-divider"></li>
+          <li>
+            <a href="#" id="create-quest-link"><i class="fas fa-plus-circle"></i><span>Create Quest</span></a>
+          </li>
+        </ul>
+        <div class="user-stats">
+          <div class="stats-icon">
+            <i class="fas fa-award"></i>
+          </div>
+          <div class="stats-info">
+            <span class="stats-label">Your Points</span>
+            <span class="stats-value" id="user-points">0</span>
+          </div>
+        </div>
+      </nav>
+
+      <!-- Main Content Area -->
+      <main class="main-content">
+        <!-- Header with search -->
+        <div class="header">
+          <div class="search-container">
+            <i class="fas fa-search search-icon"></i>
+            <input type="text" placeholder="Search quests, categories..." class="search-input" id="search-input">
+          </div>
+          <div class="header-actions">
+            <button class="filter-btn" id="filter-button">
+              <i class="fas fa-filter"></i>
+              <span>Filter</span>
+            </button>
+            <div class="user-profile">
+              <img src="https://cdn.midjourney.com/b2263cde-ed7e-454b-a529-9ca52d62c2f8/0_1.png" alt="User" class="profile-pic">
+            </div>
+          </div>
+        </div>
+
+        <!-- Category chips -->
+        <div class="category-chips">
+          <button class="chip active" data-category="all">All</button>
+          <button class="chip" data-category="work">Work</button>
+          <button class="chip" data-category="personal">Personal</button>
+          <button class="chip" data-category="community">Community</button>
+          <button class="chip" data-category="learning">Learning</button>
+          <button class="chip" data-category="other">Other</button>
+        </div>
+
+        <!-- Main tabs -->
+        <div class="content-tabs">
+          <button id="tab-active" class="content-tab-button active">Active Quests</button>
+          <button id="tab-completed" class="content-tab-button">Completed Quests</button>
+        </div>
+
+        <!-- Profile section (hidden by default) -->
+        <div id="profile-section" class="profile-section">
+          <h2 class="section-title">My Profile</h2>
+          <div class="profile-container">
+            <div class="profile-header">
+              <div class="profile-avatar">
+                <img src="https://cdn.midjourney.com/b2263cde-ed7e-454b-a529-9ca52d62c2f8/0_1.png" alt="User" class="profile-avatar-img" style="width: 150px; height: 150px;">
+              </div>
+              <div class="profile-info">
+                <h3 class="profile-name">Ming Jie</h3>
+                <p class="profile-tagline">Quest Master</p>
+                <div class="profile-stats">
+                  <div class="stat-item">
+                    <span class="stat-value" id="profile-points">0</span>
+                    <span class="stat-label">Points</span>
+                  </div>
+                  <div class="stat-item">
+                    <span class="stat-value" id="profile-completed">0</span>
+                    <span class="stat-label">Completed</span>
+                  </div>
+                  <div class="stat-item">
+                    <span class="stat-value" id="profile-created">0</span>
+                    <span class="stat-label">Created</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="profile-body">
+              <div class="profile-section-card">
+                <h4 class="profile-section-title">About Me</h4>
+                <p class="profile-description">
+                  I'm passionate about completing quests and helping others in the community. 
+                  Always looking for new challenges and ways to grow my skills.
+                </p>
+                <div class="social-links">
+                  <h5 class="social-links-title">Connect with me</h5>
+                  <div class="social-icons">
+                    <a href="#" class="social-icon"><i class="fab fa-github"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.instagram.com/mingkey88/" class="social-icon"><i class="fab fa-instagram"></i></a>
+                  </div>
+                </div>
+              </div>
+              <div class="profile-section-card">
+                <h4 class="profile-section-title">My Achievements</h4>
+                <div class="achievements-list">
+                  <div class="achievement-item">
+                    <i class="fas fa-trophy achievement-icon"></i>
+                    <span class="achievement-name">Quest Master</span>
+                  </div>
+                  <div class="achievement-item">
+                    <i class="fas fa-bolt achievement-icon"></i>
+                    <span class="achievement-name">Quick Responder</span>
+                  </div>
+                  <div class="achievement-item">
+                    <i class="fas fa-star achievement-icon"></i>
+                    <span class="achievement-name">Top Contributor</span>
+                  </div>
+                </div>
+              </div>
+              <div class="profile-section-card">
+                <h4 class="profile-section-title">Recent Activity</h4>
+                <div class="activity-timeline">
+                  <div class="activity-item">
+                    <i class="fas fa-check-circle activity-icon"></i>
+                    <div class="activity-content">
+                      <p class="activity-text">Completed quest: "Community Cleanup"</p>
+                      <span class="activity-time">2 days ago</span>
+                    </div>
+                  </div>
+                  <div class="activity-item">
+                    <i class="fas fa-plus-circle activity-icon"></i>
+                    <div class="activity-content">
+                      <p class="activity-text">Created quest: "Website Redesign"</p>
+                      <span class="activity-time">1 week ago</span>
+                    </div>
+                  </div>
+                  <div class="activity-item">
+                    <i class="fas fa-check-circle activity-icon"></i>
+                    <div class="activity-content">
+                      <p class="activity-text">Completed quest: "Data Analysis Project"</p>
+                      <span class="activity-time">2 weeks ago</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Quest card sections -->
+        <div id="active-quests-section" class="quests-section active">
+          <h2 class="section-title">Available Quests</h2>
+          <div class="quest-grid" id="quest-grid">
+            <!-- Quest cards will be dynamically added here -->
+          </div>
+        </div>
+        
+        <div id="completed-quests-section" class="quests-section">
+          <h2 class="section-title">Completed Quests</h2>
+          <div class="quest-grid" id="completed-quest-grid">
+            <!-- Completed quest cards will be dynamically added here -->
+          </div>
+        </div>
+      </main>
+
+      <!-- Create Quest Panel (hidden by default) -->
+      <div class="create-quest-panel" id="create-quest-panel">
+        <div class="panel-header">
+          <h2>Create New Quest</h2>
+          <button class="close-btn" id="close-create-panel">
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+        <form id="add-quest-form">
+          <div class="form-group column-layout">
+            <label for="quest-title">Quest Title</label>
+            <input
+              type="text"
+              id="quest-title"
+              placeholder="e.g., Water the Office Plants"
+              required
+            />
+          </div>
+          <div class="form-group column-layout">
+            <label for="quest-giver">Quest Giver</label>
+            <input
+              type="text"
+              id="quest-giver"
+              placeholder="Your name"
+              required
+            />
+          </div>
+          <div class="form-group column-layout">
+            <label for="quest-description">Description</label>
+            <textarea
+              id="quest-description"
+              rows="3"
+              placeholder="Details about the quest..."
+              required
+            ></textarea>
+          </div>
+          <div class="form-group column-layout">
+            <label for="quest-reward">Reward Points</label>
+            <input
+              type="number"
+              id="quest-reward"
+              min="1"
+              value="10"
+              required
+            />
+          </div>
+          <div class="form-group column-layout">
+            <label for="quest-category">Category</label>
+            <select id="quest-category" required>
+              <option value="work">Work</option>
+              <option value="personal">Personal</option>
+              <option value="community">Community</option>
+              <option value="learning">Learning</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+          <div class="form-group column-layout">
+            <label for="quest-deadline">Deadline (Optional)</label>
+            <input
+              type="date"
+              id="quest-deadline"
+              min=""
+            />
+          </div>
+          <button type="submit" class="btn btn-post">
+            <i class="fas fa-plus-circle"></i> Post Quest
+          </button>
+        </form>
+      </div>
+
+      <!-- Quest Details Panel (hidden by default) -->
+      <div class="quest-details-panel" id="quest-details-panel">
+        <div class="panel-header">
+          <h2>Quest Details</h2>
+          <button class="close-btn" id="close-details-panel">
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+        <div id="quest-details-content">
+          <p class="details-placeholder">Select a quest to view details</p>
+        </div>
+      </div>
+
+      <!-- Filter Panel (hidden by default) -->
+      <div class="filter-panel" id="filter-panel">
+        <div class="panel-header">
+          <h2>Filter & Sort</h2>
+          <button class="close-btn" id="close-filter-panel">
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+        <div class="filter-controls">
+          <div class="form-group column-layout">
+            <label for="filter-status">Status</label>
+            <select id="filter-status" class="filter-input">
+              <option value="all">All Statuses</option>
+              <option value="open">Open</option>
+              <option value="progress">In Progress</option>
+              <option value="completed">Completed</option>
+            </select>
+          </div>
+
+          <div class="form-group column-layout">
+            <label for="filter-category">Category</label>
+            <select id="filter-category" class="filter-input">
+              <option value="all">All Categories</option>
+              <option value="work">Work</option>
+              <option value="personal">Personal</option>
+              <option value="community">Community</option>
+              <option value="learning">Learning</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+
+          <div class="form-group column-layout">
+            <label for="sort-by">Sort By</label>
+            <select id="sort-by" class="filter-input">
+              <option value="newest">Newest First</option>
+              <option value="oldest">Oldest First</option>
+              <option value="reward-high">Highest Reward</option>
+              <option value="reward-low">Lowest Reward</option>
+              <option value="deadline">Upcoming Deadline</option>
+            </select>
+          </div>
+
+          <div class="filter-actions">
+            <button id="apply-filters" class="btn btn-apply">Apply Filters</button>
+            <button id="reset-filters" class="btn btn-reset">Reset</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Overlay for panels -->
+      <div class="overlay" id="overlay"></div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

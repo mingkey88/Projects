@@ -1,0 +1,21 @@
+/* App-specific styles that extend Tailwind */
+
+/* Remove default margin/padding and set box-sizing */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Font settings */
+body {
+  font-family: 'Poppins', sans-serif;
+}
+
+/* App container for layout */
+.app-container {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}

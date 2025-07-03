@@ -1,0 +1,746 @@
+/* Basic Reset & Body */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth; /* For smooth scrolling */
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #0f0f0f;
+  color: #ffffff;
+  line-height: 1.7;
+  overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+/* Container */
+.container {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Links */
+a {
+  color: #ff4081;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #f50057;
+}
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 25px;
+  font-weight: 500;
+  font-size: 15px;
+  cursor: pointer;
+  text-align: center;
+  transition:
+    background-color 0.3s ease,
+    transform 0.2s ease;
+  border: none;
+}
+
+.btn-primary {
+  background-color: #ff4081;
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background-color: #f50057;
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+.btn-nav {
+  background-color: rgba(255, 64, 129, 0.1);
+  color: #ff4081;
+  border: 1px solid #ff4081;
+}
+
+.btn-nav:hover {
+  background-color: rgba(255, 64, 129, 0.2);
+  color: #ff4081;
+}
+
+.btn-lg {
+  padding: 12px 25px;
+  font-size: 16px;
+}
+
+.btn i {
+  margin-left: 8px;
+}
+
+/* Header & Navbar */
+.header {
+  background-color: #0f0f0f;
+  padding: 15px 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 22px;
+  font-weight: 600;
+  color: #fff;
+}
+
+.logo i {
+  font-size: 24px;
+  color: #ff4081;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.nav-links li a {
+  color: #aaa;
+  font-weight: 500;
+}
+
+.nav-links li a:hover,
+.nav-links li a.active {
+  color: #fff;
+}
+
+.mobile-menu-toggle {
+  display: none; /* Hidden on desktop */
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* Mobile Menu */
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  right: -100%; /* Start off-screen */
+  width: 80%;
+  max-width: 300px;
+  height: 100vh;
+  background-color: #1a1a1a;
+  z-index: 110;
+  padding: 60px 20px 20px;
+  transition: right 0.3s ease-in-out;
+  box-shadow: -5px 0 15px rgba(0, 0, 0, 0.3);
+}
+
+.mobile-menu.open {
+  right: 0;
+}
+
+.mobile-menu-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: none;
+  border: none;
+  color: #aaa;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.mobile-menu ul {
+  list-style: none;
+  padding: 0;
+}
+
+.mobile-menu ul li {
+  margin-bottom: 20px;
+}
+
+.mobile-menu ul li a {
+  color: #fff;
+  font-size: 18px;
+  display: block;
+  padding: 10px 0;
+}
+
+.btn-nav-mobile {
+  display: block;
+  width: 100%;
+  margin-top: 20px;
+  background-color: #ff4081;
+  color: #fff;
+}
+
+/* Hero Section */
+.hero-section {
+  background-color: #0f0f0f;
+  background-image: radial-gradient(circle at center, #1a1a1a 0%, #0f0f0f 70%);
+  padding: 120px 0; /* Increased padding from 80px to 120px */
+  text-align: center;
+  min-height: 90vh; /* Increased from 70vh to 90vh */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  perspective: 1000px; /* Add 3D perspective */
+}
+
+/* Three.js Canvas */
+.hero-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 3;
+  transform-style: preserve-3d;
+  animation: float 6s ease-in-out infinite;
+  backdrop-filter: blur(2px);
+  background: rgba(0, 0, 0, 0.1);
+  padding: 40px;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 64, 129, 0.2);
+}
+
+.hero-content h1 {
+  font-size: 48px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  line-height: 1.3;
+  color: #fff;
+  text-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  transform: translateZ(50px);
+}
+
+.hero-content .subtitle {
+  font-size: 18px;
+  color: #aaa;
+  max-width: 600px;
+  margin: 0 auto 30px;
+  transform: translateZ(25px);
+}
+
+/* Floating particles */
+.hero-section::before,
+.hero-section::after {
+  content: '';
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background: radial-gradient(circle at center, rgba(255, 64, 129, 0.1) 0%, rgba(255, 64, 129, 0) 70%);
+  z-index: 1;
+}
+
+.hero-section::before {
+  top: 15%;
+  left: 15%;
+  animation: floatBubble 8s ease-in-out infinite;
+}
+
+.hero-section::after {
+  bottom: 15%;
+  right: 15%;
+  width: 150px;
+  height: 150px;
+  animation: floatBubble 6s ease-in-out infinite 1s;
+}
+
+/* Hero decorations */
+.hero-decorations {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  pointer-events: none; /* Make sure elements don't interfere with clicks */
+  z-index: 2;
+}
+
+.floating-icon {
+  position: absolute;
+  color: rgba(255, 64, 129, 0.2);
+  font-size: 28px;
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+
+.icon-scroll {
+  top: 25%;
+  left: 15%;
+  animation: floatIcon 8s ease-in-out infinite;
+  font-size: 32px;
+}
+
+.icon-tasks {
+  top: 70%;
+  left: 20%;
+  animation: floatIcon 7s ease-in-out infinite 1s;
+}
+
+.icon-trophy {
+  top: 30%;
+  right: 15%;
+  animation: floatIcon 9s ease-in-out infinite 2s;
+  font-size: 34px;
+}
+
+.icon-star {
+  top: 65%;
+  right: 25%;
+  animation: floatIcon 6s ease-in-out infinite;
+  font-size: 24px;
+}
+
+.icon-check {
+  top: 45%;
+  right: 30%;
+  animation: floatIcon 10s ease-in-out infinite 3s;
+}
+
+@keyframes floatIcon {
+  0% {
+    transform: translateY(0) translateX(0) translateZ(0) rotate(0deg);
+  }
+  25% {
+    transform: translateY(-15px) translateX(10px) translateZ(25px) rotate(5deg);
+  }
+  50% {
+    transform: translateY(10px) translateX(-5px) translateZ(50px) rotate(-3deg);
+  }
+  75% {
+    transform: translateY(-5px) translateX(-10px) translateZ(25px) rotate(3deg);
+  }
+  100% {
+    transform: translateY(0) translateX(0) translateZ(0) rotate(0deg);
+  }
+}
+
+/* 3D Button effect */
+.hero-section .btn-primary {
+  position: relative;
+  transform: translateZ(40px);
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.hero-section .btn-primary:hover {
+  transform: translateY(-5px) translateZ(60px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* Animations */
+@keyframes float {
+  0% {
+    transform: translateY(0px) translateZ(0px) rotateX(0deg);
+  }
+  50% {
+    transform: translateY(-10px) translateZ(10px) rotateX(1deg);
+  }
+  100% {
+    transform: translateY(0px) translateZ(0px) rotateX(0deg);
+  }
+}
+
+@keyframes floatBubble {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 0.5;
+  }
+  50% {
+    transform: translateY(-20px) scale(1.1);
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(0) scale(1);
+    opacity: 0.5;
+  }
+}
+
+/* Section Base Styles */
+.features-section,
+.how-it-works-section,
+.cta-section {
+  padding: 80px 0;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 36px;
+  font-weight: 600;
+  margin-bottom: 50px;
+  color: #fff;
+}
+
+/* Features Section */
+.features-section {
+  background-color: #141414;
+}
+
+/* --- Carousel Styles --- */
+.carousel-container {
+  position: relative;
+  max-width: 1100px; /* Increased from 900px to 1100px for a wider carousel */
+  margin: 0 auto;
+  overflow: hidden; /* Crucial for hiding other slides */
+  border-radius: 8px; /* Optional: match feature item radius */
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.5s ease-in-out; /* Animation for sliding */
+}
+
+.carousel-slide {
+  flex: 0 0 100%; /* Each slide takes full container width */
+  box-sizing: border-box;
+}
+
+/* Use existing .feature-item styles inside the slide */
+.carousel-slide .feature-item {
+  background-color: #212121;
+  padding: 50px 30px; /* Increased padding for larger appearance */
+  border-radius: 8px;
+  text-align: center;
+  width: 100%; /* Ensure it fills the slide */
+  margin-bottom: 0; /* Remove bottom margin */
+  min-height: 320px; /* Increased from 250px to 320px */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* No hover effect needed for individual items in carousel */
+}
+
+.carousel-slide .feature-icon {
+  font-size: 48px; /* Increased from 36px to 48px */
+  color: #ff4081;
+  margin-bottom: 20px; /* Slightly increased */
+  display: inline-block;
+}
+
+.carousel-slide .feature-item h3 {
+  font-size: 22px; /* Increased from 18px to 22px */
+  font-weight: 600;
+  margin-bottom: 15px; /* Slightly increased */
+  color: #fff;
+}
+
+.carousel-slide .feature-item p {
+  font-size: 16px; /* Increased from 14px to 16px */
+  color: #aaa;
+}
+
+.carousel-dots {
+  text-align: center;
+  padding: 15px 0;
+  position: absolute;
+  bottom: 10px; /* Position dots at the bottom */
+  left: 0;
+  right: 0;
+  z-index: 10;
+}
+
+.dot {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  margin: 0 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.dot.active {
+  background-color: #ff4081;
+}
+
+/* How It Works Section */
+.how-it-works-section {
+  background-color: #0f0f0f;
+}
+
+.steps-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  position: relative;
+  gap: 30px;
+}
+
+.step-item {
+  flex: 1;
+  text-align: center;
+  position: relative;
+  padding-top: 40px; /* Space for number */
+}
+
+.step-number {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40px;
+  height: 40px;
+  background-color: #303030;
+  color: #ff4081;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 18px;
+  border: 2px solid #ff4081;
+}
+
+.step-icon {
+  font-size: 36px;
+  color: #ff4081;
+  margin-bottom: 15px;
+}
+
+.step-item h3 {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #fff;
+}
+
+.step-item p {
+  font-size: 15px;
+  color: #aaa;
+}
+
+.step-connector {
+  display: none; /* Hide connector line by default */
+}
+
+/* Add connector line for larger screens */
+@media (min-width: 768px) {
+  .steps-container {
+    position: relative;
+  }
+  .step-connector {
+    display: block;
+    flex-grow: 0.5; /* Adjust spacing */
+    height: 2px;
+    background-color: rgba(255, 255, 255, 0.2);
+    margin-top: 60px; /* Align with middle of icons/text */
+    align-self: flex-start;
+  }
+}
+
+/* CTA Section */
+.cta-section {
+  background-color: #1a1a1a;
+  text-align: center;
+}
+
+.cta-section h2 {
+  font-size: 32px;
+  font-weight: 600;
+  margin-bottom: 15px;
+  color: #fff;
+}
+
+.cta-section p {
+  font-size: 18px;
+  color: #aaa;
+  margin-bottom: 30px;
+}
+
+/* Footer */
+.footer {
+  background-color: #0f0f0f;
+  padding: 30px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  margin-top: 50px;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.footer .logo {
+  font-size: 20px;
+}
+
+.footer p {
+  color: #aaa;
+  font-size: 14px;
+}
+
+/* Social Links */
+.social-links {
+  display: flex;
+  gap: 15px;
+}
+
+.social-links a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 36px;
+  height: 36px;
+  background-color: rgba(255, 64, 129, 0.1);
+  border-radius: 50%;
+  color: #ff4081;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+  background-color: #ff4081;
+  color: #fff;
+  transform: translateY(-3px);
+}
+
+/* Loading indicator for 3D scene */
+.hero-loading {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  z-index: 4;
+  color: #fff;
+  opacity: 1;
+  transition: opacity 0.5s ease;
+}
+
+.hero-loading.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.loading-spinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid rgba(255, 64, 129, 0.3);
+  border-top: 3px solid #ff4081;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin: 0 auto 15px;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  .hero-content h1 {
+    font-size: 40px;
+  }
+  .section-title {
+    font-size: 32px;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    display: none; /* Hide desktop nav */
+  }
+  .mobile-menu-toggle {
+    display: block; /* Show hamburger icon */
+  }
+  .hero-content h1 {
+    font-size: 36px;
+  }
+  .hero-content .subtitle {
+    font-size: 16px;
+  }
+  .section-title {
+    font-size: 28px;
+  }
+  .steps-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+  }
+  .step-connector {
+    display: none; /* Hide connector on vertical layout */
+  }
+  .step-item {
+    width: 100%;
+    max-width: 400px;
+  }
+  .footer-content {
+    flex-direction: column;
+    text-align: center;
+  }
+  .carousel-container {
+    max-width: 90%; /* Allow slightly wider on smaller screens */
+  }
+  .carousel-slide .feature-item {
+    min-height: 280px; /* Maybe taller on mobile */
+  }
+  
+  /* Mobile optimizations for 3D scene */
+  .hero-canvas {
+    opacity: 0.7; /* Reduce canvas opacity on mobile for better text readability */
+  }
+  
+  .hero-content {
+    padding: 20px;
+    backdrop-filter: blur(4px);
+    background: rgba(0, 0, 0, 0.3);
+  }
+}
+
+@media (max-width: 576px) {
+  .hero-content h1 {
+    font-size: 30px;
+  }
+  .btn-lg {
+    padding: 10px 20px;
+    font-size: 15px;
+  }
+  /* Features grid was removed, no need for stacking rules here */
+}
+
+@media (max-width: 480px) {
+  .hero-content h1 {
+    font-size: 28px;
+  }
+  
+  .hero-content .subtitle {
+    font-size: 14px;
+  }
+  
+  .hero-canvas {
+    opacity: 0.5;
+  }
+}
