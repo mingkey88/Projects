@@ -1,0 +1,259 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 320px;
+  height: 100vh;
+  background: linear-gradient(180deg, #7c2d12 0%, #991b1b 100%);
+  z-index: 1000;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 4px 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.navbar.scrolled {
+  box-shadow: 4px 0 25px rgba(0, 0, 0, 0.25);
+}
+
+.nav-container {
+  width: 100%;
+  padding: 40px 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  height: 100%;
+  gap: 50px;
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: -0.025em;
+}
+
+.logo-icon {
+  color: #fbbf24;
+  font-size: 1.8rem;
+}
+
+.nav-menu {
+  display: flex;
+  list-style: none;
+  flex-direction: column;
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+.nav-item {
+  position: relative;
+}
+
+.nav-link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #ffffff;
+  text-decoration: none;
+  padding: 14px 20px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  font-weight: 500;
+  width: 100%;
+  box-sizing: border-box;
+  border-left: 4px solid transparent;
+  margin-bottom: 4px;
+}
+
+.nav-link:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-left: 4px solid #fbbf24;
+  transform: translateX(4px);
+}
+
+.nav-link.active {
+  background: rgba(255, 255, 255, 0.15);
+  border-left: 4px solid #fbbf24;
+  color: #fbbf24;
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-top: auto;
+  width: 100%;
+  justify-content: center;
+  padding-top: 30px;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.theme-toggle {
+  background: rgba(255, 255, 255, 0.1);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  color: #ffffff;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+}
+
+.theme-toggle:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: #fbbf24;
+  color: #fbbf24;
+  transform: scale(1.05);
+}
+
+.hamburger {
+  display: none;
+  background: rgba(255, 255, 255, 0.1);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  color: #ffffff;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.hamburger:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: #fbbf24;
+  color: #fbbf24;
+}
+
+/* Contact Info Section */
+.nav-contact {
+  margin-top: 30px;
+  padding: 20px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  width: 100%;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #ffffff;
+  font-size: 0.9rem;
+  margin-bottom: 12px;
+  padding: 8px 0;
+}
+
+.contact-item svg {
+  color: #fbbf24;
+  width: 18px;
+  height: 18px;
+}
+
+.contact-item a {
+  color: #ffffff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.contact-item a:hover {
+  color: #fbbf24;
+}
+
+/* Mobile Responsive */
+@media (max-width: 1024px) {
+  .navbar {
+    width: 280px;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    width: 70px;
+    overflow: hidden;
+  }
+
+  .navbar:hover {
+    width: 280px;
+  }
+
+  .nav-container {
+    padding: 20px 10px;
+    gap: 20px;
+  }
+
+  .nav-logo span {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .navbar:hover .nav-logo span {
+    opacity: 1;
+  }
+
+  .nav-link span {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .navbar:hover .nav-link span {
+    opacity: 1;
+  }
+
+  .nav-contact {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .navbar:hover .nav-contact {
+    opacity: 1;
+  }
+
+  .nav-menu {
+    gap: 4px;
+  }
+
+  .nav-link {
+    padding: 12px;
+    justify-content: center;
+  }
+
+  .navbar:hover .nav-link {
+    justify-content: flex-start;
+    padding: 14px 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar {
+    width: 60px;
+  }
+
+  .navbar:hover {
+    width: 250px;
+  }
+
+  .nav-container {
+    padding: 15px 8px;
+    gap: 15px;
+  }
+
+  .nav-logo {
+    font-size: 1.3rem;
+  }
+
+  .nav-link {
+    padding: 10px;
+  }
+  
+  .navbar:hover .nav-link {
+    padding: 10px 12px;
+  }
+}

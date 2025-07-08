@@ -1,0 +1,248 @@
+.about-skills-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: start;
+  padding: 0;
+}
+
+.profile-section {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 30px;
+  border: 1px solid #e5e7eb;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.profile-section:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.profile-name {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #1f2937;
+  letter-spacing: -0.025em;
+}
+
+.profile-tagline {
+  font-size: 1rem;
+  color: #2563eb;
+  margin-bottom: 16px;
+  font-weight: 500;
+}
+
+.profile-description {
+  color: #4b5563;
+  line-height: 1.7;
+  margin-bottom: 24px;
+}
+
+.skills-section {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 30px;
+  border: 1px solid #e5e7eb;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.skills-section:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.skills-section-title {
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: #1f2937;
+  padding-bottom: 12px;
+  border-bottom: 3px solid #2563eb;
+}
+
+.skills-container {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.skills-category {
+  margin-bottom: 20px;
+}
+
+.skills-category-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 12px;
+  color: #374151;
+}
+
+.skills-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.skill-item {
+  background: #f3f4f6;
+  border: 1px solid #d1d5db;
+  border-radius: 16px;
+  padding: 6px 14px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.3s ease;
+  font-size: 0.9rem;
+}
+
+.skill-item:hover {
+  background: #e5e7eb;
+  border-color: #2563eb;
+  color: #2563eb;
+  transform: translateY(-1px);
+}
+
+.skill-item.upcoming {
+  background: #fef3c7;
+  border-color: #f59e0b;
+  color: #92400e;
+}
+
+.skill-item.upcoming:hover {
+  background: #fde68a;
+  border-color: #d97706;
+}
+
+.skill-name {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #374151;
+}
+
+.skill-badge {
+  background: #f59e0b;
+  color: #ffffff;
+  font-size: 0.7rem;
+  font-weight: 600;
+  padding: 2px 6px;
+  border-radius: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.social-links {
+  display: flex;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.social-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: rgba(102, 126, 234, 0.1);
+  border: 1px solid rgba(102, 126, 234, 0.3);
+  border-radius: 50%;
+  color: #667eea;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.social-icon:hover {
+  background: #667eea;
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
+}
+
+/* Light theme styles */
+body.light-theme .profile-section,
+body.light-theme .skills-section {
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+body.light-theme .profile-tagline {
+  color: rgba(51, 51, 51, 0.8);
+}
+
+body.light-theme .profile-description {
+  color: rgba(51, 51, 51, 0.7);
+}
+
+body.light-theme .skills-section-title {
+  color: #333333;
+}
+
+body.light-theme .skill-name {
+  color: #333333;
+}
+
+/* Mobile Responsive */
+@media (max-width: 968px) {
+  .about-skills-container {
+    grid-template-columns: 1fr;
+    gap: 60px;
+    padding: 0 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-skills-container {
+    padding: 0 15px;
+    gap: 40px;
+  }
+
+  .profile-section,
+  .skills-section {
+    padding: 30px;
+    margin: 15px 0;
+  }
+
+  .profile-name {
+    font-size: 1.5rem;
+  }
+
+  .skills-section-title {
+    font-size: 1.3rem;
+  }
+
+  .skills-container {
+    gap: 24px;
+  }
+
+  .social-links {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-skills-container {
+    padding: 0 10px;
+  }
+
+  .profile-section,
+  .skills-section {
+    padding: 25px;
+    margin: 10px 0;
+  }
+
+  .skills-list {
+    gap: 8px;
+  }
+
+  .skill-item {
+    padding: 6px 12px;
+  }
+
+  .skill-name {
+    font-size: 0.8rem;
+  }
+}
