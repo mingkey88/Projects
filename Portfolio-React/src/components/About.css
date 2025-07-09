@@ -2,7 +2,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 60px;
-  align-items: start;
+  align-items: stretch;
   padding: 0;
 }
 
@@ -13,6 +13,9 @@
   border: 1px solid #e5e7eb;
   transition: all 0.3s ease;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 .profile-section:hover {
@@ -48,6 +51,9 @@
   border: 1px solid #e5e7eb;
   transition: all 0.3s ease;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 .skills-section:hover {
@@ -68,6 +74,7 @@
   display: flex;
   flex-direction: column;
   gap: 24px;
+  flex: 1;
 }
 
 .skills-category {

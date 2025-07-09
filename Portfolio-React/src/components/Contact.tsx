@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Mail, Phone, MapPin, Send } from 'lucide-react'
+import { Mail, Phone, MapPin, Send, Download } from 'lucide-react'
 import './Contact.css'
 
 const Contact = () => {
@@ -60,6 +60,11 @@ const Contact = () => {
                 <span>Singapore</span>
               </div>
             </div>
+            
+            <button className="download-resume-btn" onClick={() => window.open('/resume.pdf', '_blank')}>
+              <Download size={20} />
+              Download Resume
+            </button>
           </div>
           
           <form className="contact-form" onSubmit={handleSubmit}>
