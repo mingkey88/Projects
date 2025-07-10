@@ -51,10 +51,10 @@ const About = () => {
                 </div>
                 
                 <div className="social-links">
-                  <a href="#" className="social-icon" aria-label="GitHub">
+                  <a href="https://github.com/mingkey88" className="social-icon" aria-label="GitHub">
                     <Github size={20} />
                   </a>
-                  <a href="#" className="social-icon" aria-label="LinkedIn">
+                  <a href="https://www.linkedin.com/in/tan-ming-jie-641022b1" className="social-icon" aria-label="LinkedIn">
                     <Linkedin size={20} />
                   </a>
                   <a href="#" className="social-icon" aria-label="Twitter">

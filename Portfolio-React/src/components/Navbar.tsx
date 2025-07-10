@@ -31,8 +31,8 @@ const Navbar = ({ isDarkTheme, toggleTheme }: NavbarProps) => {
     { icon: Phone, label: '+65 98278695', href: 'tel:+6598278695' },
     { icon: Mail, label: 'mingjie.tan88@gmail.com', href: 'mailto:mingjie.tan88@gmail.com' },
     { icon: MapPin, label: 'Singapore', href: '#' },
-    { icon: Linkedin, label: 'LinkedIn', href: 'https://linkedin.com/in/mingjie' },
-    { icon: Github, label: 'GitHub', href: 'https://github.com/mingkey5428' },
+    { icon: Linkedin, label: 'LinkedIn', href: 'https://www.linkedin.com/in/tan-ming-jie-641022b1' },
+    { icon: Github, label: 'GitHub', href: 'https://github.com/mingkey88' },
   ]
 
   const handleNavClick = (href: string) => {

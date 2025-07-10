@@ -44,8 +44,9 @@
 .project-card {
   background: #ffffff;
   border-radius: 12px;
-  overflow: hidden;
   border: 1px solid #e5e7eb;
+  border-left: 6px solid #ef4444;
+  overflow: hidden;
   transition: all 0.3s ease;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
   cursor: pointer;
@@ -148,6 +149,7 @@
 .modal-content {
   background: #ffffff;
   border-radius: 16px;
+  border-left: 10px solid #ef4444;
   width: 75vw;
   height: 75vh;
   max-width: 1200px;
@@ -163,11 +165,11 @@
   position: absolute;
   top: 20px;
   right: 20px;
-  background: rgba(255, 255, 255, 0.9);
-  border: none;
-  border-radius: 50%;
-  width: 40px;
-  height: 40px;
+  background: rgba(255, 255, 255, 0.95);
+  border: 2px solid #e5e7eb;
+  border-radius: 8px;
+  width: 48px;
+  height: 48px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -175,12 +177,22 @@
   transition: all 0.3s ease;
   z-index: 10;
   color: #374151;
+  font-size: 24px;
+  font-weight: bold;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.modal-close::before {
+  content: '×';
+  line-height: 1;
 }
 
 .modal-close:hover {
   background: rgba(255, 255, 255, 1);
+  border-color: #ef4444;
   transform: scale(1.1);
   color: #ef4444;
+  box-shadow: 0 6px 20px rgba(239, 68, 68, 0.3);
 }
 
 .modal-header {
@@ -191,8 +203,9 @@
 .modal-image {
   width: 100%;
   height: 400px;
-  object-fit: cover;
+  object-fit: contain;
   border-radius: 16px 16px 0 0;
+  background: #f8fafc;
 }
 
 .modal-info {
@@ -448,8 +461,9 @@
   .modal-close {
     top: 15px;
     right: 15px;
-    width: 36px;
-    height: 36px;
+    width: 44px;
+    height: 44px;
+    font-size: 18px;
   }
   
   .modal-image {
