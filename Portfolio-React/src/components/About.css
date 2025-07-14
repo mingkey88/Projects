@@ -1,3 +1,8 @@
+.profile-description {
+  color: #222 !important;
+  line-height: 1.7;
+  margin-bottom: 24px;
+}
 .about-skills-container {
   display: grid;
   grid-template-columns: 1fr 1fr;
