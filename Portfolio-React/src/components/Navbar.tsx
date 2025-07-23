@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
-import { Menu, X, Home, User, Briefcase, Mail, Moon, Sun, Code, Phone, MapPin, Linkedin, Github } from 'lucide-react'
+import { Menu, X, Home, User, Briefcase, Mail, Moon, Sun, Phone, MapPin, Linkedin, Github } from 'lucide-react'
 import './Navbar.css'
+import Logo from './Logo'
 
 interface NavbarProps {
   isDarkTheme: boolean
@@ -10,13 +11,33 @@ interface NavbarProps {
 const Navbar = ({ isDarkTheme, toggleTheme }: NavbarProps) => {
   const [isOpen, setIsOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
+  const [activeSection, setActiveSection] = useState('hero')
 
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 50)
+
+      // Get all sections
+      const sections = ['hero', 'about', 'projects', 'contact']
+      const scrollPosition = window.scrollY + 100 // offset for navbar height
+
+      // Find which section is currently in view
+      for (const section of sections) {
+        const element = document.getElementById(section)
+        if (element) {
+          const { offsetTop, offsetHeight } = element
+          if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
+            setActiveSection(section)
+            break
+          }
+        }
+      }
     }
 
     window.addEventListener('scroll', handleScroll)
+    // Call once to set initial state
+    handleScroll()
+    
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
@@ -47,8 +68,7 @@ const Navbar = ({ isDarkTheme, toggleTheme }: NavbarProps) => {
     <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
       <div className="nav-container">
         <div className="nav-logo">
-          <Code className="logo-icon" />
-          <span>Ming Jie</span>
+          <Logo />
         </div>
         
         <ul className={`nav-menu ${isOpen ? 'active' : ''}`}>
@@ -58,7 +78,7 @@ const Navbar = ({ isDarkTheme, toggleTheme }: NavbarProps) => {
               <li key={item.href} className="nav-item">
                 <a 
                   href={item.href} 
-                  className="nav-link"
+                  className={`nav-link ${activeSection === item.href.slice(1) ? 'active' : ''}`}
                   onClick={(e) => {
                     e.preventDefault()
                     handleNavClick(item.href)

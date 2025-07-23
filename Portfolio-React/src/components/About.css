@@ -1,7 +1,8 @@
 .profile-description {
-  color: #222 !important;
+  color: var(--muted) !important;
   line-height: 1.7;
   margin-bottom: 24px;
+  font-family: var(--font-body);
 }
 .about-skills-container {
   display: grid;
@@ -12,69 +13,128 @@
 }
 
 .profile-section {
-  background: #ffffff;
+  background: var(--surface);
   border-radius: 12px;
-  padding: 30px;
-  border: 1px solid #e5e7eb;
-  border-left: 6px solid #8b5cf6;
+  padding: 2rem;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-left: 6px solid var(--primary);
+  border-top: 2px solid var(--blueprint);
   transition: all 0.3s ease;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(8px);
   display: flex;
   flex-direction: column;
   height: 100%;
+  position: relative;
 }
 
+.profile-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    linear-gradient(90deg, var(--blueprint) 0.5px, transparent 0.5px),
+    linear-gradient(0deg, var(--blueprint) 0.5px, transparent 0.5px),
+    radial-gradient(circle at 20% 80%, var(--blueprint) 1px, transparent 1px);
+  background-size: 20px 20px, 20px 20px, 40px 40px;
+  opacity: 0.08;
+  border-radius: 12px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.profile-section > * {
+  position: relative;
+  z-index: 1;
+}
+
+
 .profile-section:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
 }
 
 .profile-name {
+  font-family: var(--font-heading);
   font-size: 1.8rem;
-  font-weight: 600;
+  font-weight: 700;
   margin-bottom: 8px;
-  color: #1f2937;
-  letter-spacing: -0.025em;
+  color: rgba(255, 255, 255, 0.95);
+  letter-spacing: 0.05em;
 }
 
 .profile-tagline {
   font-size: 1rem;
-  color: #2563eb;
+  color: var(--accent);
   margin-bottom: 16px;
   font-weight: 500;
+  font-family: var(--font-body);
 }
 
 .profile-description {
-  color: #4b5563;
+  color: var(--muted);
   line-height: 1.7;
   margin-bottom: 24px;
+  font-family: var(--font-body);
 }
 
 .skills-section {
-  background: #ffffff;
+  background: var(--surface);
   border-radius: 12px;
-  padding: 30px;
-  border: 1px solid #e5e7eb;
-  border-left: 6px solid #8b5cf6;
+  padding: 2rem;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-left: 6px solid var(--primary);
+  border-bottom: 2px solid var(--blueprint);
   transition: all 0.3s ease;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(8px);
   display: flex;
   flex-direction: column;
   height: 100%;
+  position: relative;
 }
 
+.skills-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    linear-gradient(90deg, var(--blueprint) 0.5px, transparent 0.5px),
+    linear-gradient(0deg, var(--blueprint) 0.5px, transparent 0.5px),
+    radial-gradient(circle at 80% 20%, var(--blueprint) 1px, transparent 1px);
+  background-size: 20px 20px, 20px 20px, 40px 40px;
+  opacity: 0.08;
+  border-radius: 12px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.skills-section > * {
+  position: relative;
+  z-index: 1;
+}
+
+
 .skills-section:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
 }
 
 .skills-section-title {
+  font-family: var(--font-heading);
   font-size: 1.4rem;
-  font-weight: 600;
+  font-weight: 700;
   margin-bottom: 20px;
-  color: #1f2937;
+  color: rgba(255, 255, 255, 0.95);
+  letter-spacing: 0.05em;
   padding-bottom: 12px;
-  border-bottom: 3px solid #2563eb;
+  border-bottom: 3px solid var(--primary);
 }
 
 .skills-container {
@@ -89,10 +149,12 @@
 }
 
 .skills-category-title {
+  font-family: var(--font-heading);
   font-size: 1.1rem;
   font-weight: 600;
   margin-bottom: 12px;
-  color: #374151;
+  color: rgba(255, 255, 255, 0.9);
+  letter-spacing: 0.05em;
 }
 
 .skills-list {
@@ -102,8 +164,8 @@
 }
 
 .skill-item {
-  background: #f3f4f6;
-  border: 1px solid #d1d5db;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 16px;
   padding: 6px 14px;
   display: flex;
@@ -111,41 +173,47 @@
   gap: 6px;
   transition: all 0.3s ease;
   font-size: 0.9rem;
+  font-family: var(--font-body);
+  backdrop-filter: blur(4px);
 }
 
 .skill-item:hover {
-  background: #e5e7eb;
-  border-color: #2563eb;
-  color: #2563eb;
-  transform: translateY(-1px);
+  background: rgba(255, 255, 255, 0.2);
+  border-color: var(--accent);
+  color: var(--accent);
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .skill-item.upcoming {
-  background: #fef3c7;
-  border-color: #f59e0b;
-  color: #92400e;
+  background: rgba(247, 171, 163, 0.2);
+  border-color: var(--accent);
+  color: var(--accent);
 }
 
 .skill-item.upcoming:hover {
-  background: #fde68a;
-  border-color: #d97706;
+  background: rgba(247, 171, 163, 0.3);
+  border-color: var(--primary);
+  color: var(--primary);
 }
 
 .skill-name {
   font-size: 0.9rem;
   font-weight: 500;
-  color: #374151;
+  color: rgba(255, 255, 255, 0.9);
+  font-family: var(--font-body);
 }
 
 .skill-badge {
-  background: #f59e0b;
-  color: #ffffff;
+  background: var(--accent);
+  color: var(--background);
   font-size: 0.7rem;
   font-weight: 600;
   padding: 2px 6px;
   border-radius: 8px;
   text-transform: uppercase;
   letter-spacing: 0.5px;
+  font-family: var(--font-body);
 }
 
 .social-links {
@@ -160,19 +228,21 @@
   justify-content: center;
   width: 40px;
   height: 40px;
-  background: rgba(102, 126, 234, 0.1);
-  border: 1px solid rgba(102, 126, 234, 0.3);
-  border-radius: 50%;
-  color: #667eea;
+  background: var(--accent);
+  border: 1px solid var(--accent);
+  border-radius: 6px;
+  color: var(--background);
   text-decoration: none;
   transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .social-icon:hover {
-  background: #667eea;
-  color: #ffffff;
-  transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
+  background: var(--primary);
+  border-color: var(--primary);
+  color: var(--background);
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
 /* Light theme styles */

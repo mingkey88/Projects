@@ -1,9 +1,8 @@
 import { useState } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
-import { X, ExternalLink, Github, Calendar, User } from 'lucide-react'
 import './Projects.css'
 import ImageLoader from './ImageLoader'
 import ScrollReveal from './ScrollReveal'
+import ProjectModal from './ProjectModal'
 
 interface Project {
   id: number
@@ -165,13 +164,11 @@ const Projects = () => {
   const openModal = (project: Project) => {
     setSelectedProject(project)
     setIsModalOpen(true)
-    document.body.style.overflow = 'hidden'
   }
 
   const closeModal = () => {
     setIsModalOpen(false)
     setSelectedProject(null)
-    document.body.style.overflow = 'unset'
   }
 
   return (
@@ -201,7 +198,7 @@ const Projects = () => {
         <div className="projects-grid">
           {filteredProjects.map((project, index) => (
             <ScrollReveal key={project.id} delay={0.1 * index}>
-            <div key={project.id} className="project-card">
+            <div key={project.id} className="project-card" onClick={() => openModal(project)}>
               <div className="project-image">
                 <ImageLoader src={project.image} alt={project.title} />
                 <div className="project-overlay">
@@ -232,111 +229,11 @@ const Projects = () => {
         </div>
       </div>
 
-      {/* Project Detail Modal */}
-      <AnimatePresence>
-        {isModalOpen && selectedProject && (
-          <motion.div
-            className="modal-overlay"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.3 }}
-            onClick={closeModal}
-          >
-            <motion.div
-              className="modal-content"
-              initial={{ opacity: 0, scale: 0.8, y: 50 }}
-              animate={{ opacity: 1, scale: 1, y: 0 }}
-              exit={{ opacity: 0, scale: 0.8, y: 50 }}
-              transition={{ duration: 0.3 }}
-              onClick={(e) => e.stopPropagation()}
-            >
-              <button className="modal-close" onClick={closeModal}>
-                <X size={24} />
-              </button>
-              
-              <div className="modal-header">
-                <ImageLoader 
-                  src={selectedProject.image} 
-                  alt={selectedProject.title}
-                  className="modal-image"
-                />
-                <div className="modal-info">
-                  <h2 className="modal-title">{selectedProject.title}</h2>
-                  <div className="modal-meta">
-                    {selectedProject.date && (
-                      <div className="meta-item">
-                        <Calendar size={16} />
-                        <span>{selectedProject.date}</span>
-                      </div>
-                    )}
-                    {selectedProject.role && (
-                      <div className="meta-item">
-                        <User size={16} />
-                        <span>{selectedProject.role}</span>
-                      </div>
-                    )}
-                  </div>
-                </div>
-              </div>
-              
-              <div className="modal-body">
-                <div className="modal-description">
-                  <h3>About This Project</h3>
-                  <p>{selectedProject.fullDescription || selectedProject.description}</p>
-                </div>
-                
-                {selectedProject.technologies && (
-                  <div className="modal-section">
-                    <h3>Technologies Used</h3>
-                    <div className="tech-grid">
-                      {selectedProject.technologies.map((tech, index) => (
-                        <span key={index} className="tech-tag">{tech}</span>
-                      ))}
-                    </div>
-                  </div>
-                )}
-                
-                {selectedProject.features && (
-                  <div className="modal-section">
-                    <h3>Key Features</h3>
-                    <ul className="features-list">
-                      {selectedProject.features.map((feature, index) => (
-                        <li key={index}>{feature}</li>
-                      ))}
-                    </ul>
-                  </div>
-                )}
-                
-                <div className="modal-actions">
-                  {selectedProject.link && (
-                    <a
-                      href={selectedProject.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="btn btn-primary"
-                    >
-                      <ExternalLink size={16} />
-                      View Live Project
-                    </a>
-                  )}
-                  {selectedProject.githubLink && (
-                    <a
-                      href={selectedProject.githubLink}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="btn btn-secondary"
-                    >
-                      <Github size={16} />
-                      View Source Code
-                    </a>
-                  )}
-                </div>
-              </div>
-            </motion.div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+      <ProjectModal 
+        isOpen={isModalOpen}
+        onClose={closeModal}
+        project={selectedProject}
+      />
     </section>
   )
 }

@@ -37,11 +37,11 @@ function ParticleField() {
     <Points ref={meshRef} positions={sphere} stride={3} frustumCulled={false}>
       <PointMaterial
         transparent
-        color="#667eea"
+        color="#F7ABA3"
         size={0.02}
         sizeAttenuation={true}
         depthWrite={false}
-        opacity={0.8}
+        opacity={0.6}
         blending={THREE.AdditiveBlending}
       />
     </Points>
@@ -95,7 +95,7 @@ function FloatingIcons() {
             animation: `floatIcon 4s ease-in-out infinite`,
             animationDelay: `${i * 0.3}s`,
             zIndex: 2,
-            filter: 'drop-shadow(0 2px 8px rgba(59,130,246,0.15))'
+            filter: 'drop-shadow(0 2px 8px rgba(247, 171, 163, 0.2)) hue-rotate(20deg) saturate(1.2)'
           }}
         />
       ))}
@@ -139,11 +139,40 @@ const HeroSection = () => {
           </div>
           <div className="hero-profile">
             <div className="hero-profile-image">
-              <ImageLoader
-                src="https://cdn.midjourney.com/a02d2257-ca0a-449e-8dd5-26590606305c/0_0.png"
-                alt="Ming Jie"
-                className="hero-avatar"
-              />
+              <div className="hexagon-profile-container">
+                <svg 
+                  width="240" 
+                  height="240" 
+                  viewBox="0 0 200 200" 
+                  className="hexagon-profile-svg"
+                >
+                  <defs>
+                    <clipPath id="hexagonClip">
+                      <path d="M100 10L170 50V150L100 190L30 150V50L100 10Z" />
+                    </clipPath>
+                  </defs>
+                  
+                  {/* Profile image */}
+                  <image
+                    href="https://cdn.midjourney.com/a02d2257-ca0a-449e-8dd5-26590606305c/0_0.png"
+                    x="0"
+                    y="0"
+                    width="200"
+                    height="200"
+                    clipPath="url(#hexagonClip)"
+                    className="hexagon-image"
+                  />
+                  
+                  {/* Outer hexagonal frame */}
+                  <path 
+                    d="M100 10L170 50V150L100 190L30 150V50L100 10Z" 
+                    stroke="currentColor" 
+                    strokeWidth="3" 
+                    fill="none"
+                    className="hexagon-frame"
+                  />
+                </svg>
+              </div>
             </div>
           </div>
         </div>

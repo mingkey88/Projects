@@ -10,12 +10,16 @@ html {
 }
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Inter", sans-serif;
+  font-family: var(--font-body);
   line-height: 1.6;
   overflow-x: hidden;
-  background-color: #f8f9fa;
-  color: #333333;
+  background-color: var(--background);
+  color: rgba(255, 255, 255, 0.9);
   font-weight: 400;
+}
+
+body.modal-open {
+  overflow: hidden;
 }
 
 .app {
@@ -23,51 +27,102 @@ body {
   margin-left: 280px;
   transition: margin-left 0.3s ease;
   width: calc(100vw - 280px);
-  max-width: none;
-  background-color: #f8f9fa;
+  background: var(--gradient);
+  position: relative;
+  overflow-x: hidden;
+  padding-top: 0;
+}
+
+/* Ensure hero section is flush with top */
+.app > .hero-section:first-child {
+  margin-top: 0 !important;
+  border-top: none !important;
 }
 
 /* Section Styles */
 .section {
-  padding: 60px 0;
+  min-height: 100vh;
+  padding: 100px 0;
   position: relative;
-  background-color: #ffffff;
-  margin: 20px;
+  background-color: var(--surface);
+  margin: 24px;
   border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
-  border: 1px solid #e5e7eb;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+}
+
+.section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    linear-gradient(90deg, var(--primary) 1px, transparent 1px),
+    linear-gradient(0deg, var(--primary) 1px, transparent 1px),
+    linear-gradient(45deg, var(--blueprint) 1px, transparent 1px),
+    linear-gradient(135deg, var(--blueprint) 1px, transparent 1px),
+    linear-gradient(45deg, transparent 35%, rgba(225, 143, 148, 0.1) 35%, rgba(225, 143, 148, 0.1) 50%, transparent 50%),
+    radial-gradient(circle at 50% 50%, var(--blueprint) 0.5px, transparent 0.5px);
+  background-size: 30px 30px, 30px 30px, 15px 15px, 15px 15px, 12px 12px, 60px 60px;
+  opacity: 0.12;
+  border-radius: 12px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.section > * {
+  position: relative;
+  z-index: 1;
 }
 
 .container {
-  max-width: 100%;
   margin: 0 auto;
   padding: 0 40px;
   width: 100%;
+  max-width: none;
 }
 
 .section-header {
   text-align: left;
   margin-bottom: 48px;
   padding-bottom: 20px;
-  border-bottom: 3px solid #3b82f6;
+  border-bottom: 3px solid var(--primary);
   position: relative;
 }
 
+.section-header::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent 0%, var(--blueprint) 30%, var(--accent) 50%, var(--blueprint) 70%, transparent 100%);
+  animation: mechanicalScan 4s ease-in-out infinite;
+  filter: drop-shadow(0 0 2px var(--blueprint));
+}
+
 .section-title {
+  font-family: var(--font-heading);
   font-size: 2rem;
   font-weight: 700;
   margin-bottom: 12px;
-  color: #1f2937;
-  letter-spacing: -0.025em;
+  color: rgba(255, 255, 255, 0.95);
+  letter-spacing: 0.05em;
 }
 
 .section-subtitle {
   font-size: 1.1rem;
-  color: #6b7280;
+  color: var(--muted);
   max-width: 600px;
   margin: 0;
   font-weight: 400;
-  line-height: 1.5;
+  line-height: 1.6;
 }
 
 /* Button Styles */
@@ -86,38 +141,38 @@ body {
 }
 
 .btn-primary {
-  background-color: #2563eb;
-  color: white;
-  border: 2px solid #2563eb;
+  background-color: var(--accent);
+  color: var(--background);
+  border: 2px solid var(--accent);
 }
 
 .btn-primary:hover {
-  background-color: #1d4ed8;
-  border-color: #1d4ed8;
-  transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+  background-color: var(--primary);
+  border-color: var(--primary);
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 4px 12px rgba(247, 171, 163, 0.4);
 }
 
 .btn-primary:focus {
   outline: none;
-  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.3);
+  box-shadow: 0 0 0 3px rgba(247, 171, 163, 0.3);
 }
 
 .btn-secondary {
   background-color: transparent;
-  color: #2563eb;
-  border: 2px solid #2563eb;
+  color: var(--accent);
+  border: 2px solid var(--accent);
 }
 
 .btn-secondary:hover {
-  background-color: #2563eb;
-  color: white;
-  transform: translateY(-1px);
+  background-color: var(--accent);
+  color: var(--background);
+  transform: translateY(-2px) scale(1.02);
 }
 
 .btn-secondary:focus {
   outline: none;
-  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.3);
+  box-shadow: 0 0 0 3px rgba(247, 171, 163, 0.3);
 }
 
 /* Responsive Design */
@@ -129,6 +184,7 @@ body {
   
   .section {
     margin: 15px;
+    min-height: calc(100vh - 30px);
   }
   
   .container {
@@ -138,6 +194,7 @@ body {
 
 @media (max-width: 768px) {
   .section {
+    min-height: calc(100vh - 80px);
     padding: 60px 0;
     margin: 10px;
   }
@@ -191,8 +248,86 @@ body {
   }
 }
 
+@keyframes fadeInUpScale {
+  from {
+    opacity: 0;
+    transform: translateY(40px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
 @keyframes gradientAnimation {
   0% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
   100% { background-position: 0% 50%; }
+}
+
+@keyframes glowPulse {
+  0%, 100% { 
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  }
+  50% { 
+    box-shadow: 0 8px 25px rgba(247, 171, 163, 0.4);
+  }
+}
+
+@keyframes mechanicalScan {
+  0% {
+    background-position: -100% 0;
+  }
+  100% {
+    background-position: 100% 0;
+  }
+}
+
+/* Blueprint Circuit Animations */
+@keyframes blueprintPulse {
+  0%, 100% {
+    opacity: 0.05;
+  }
+  50% {
+    opacity: 0.15;
+  }
+}
+
+/* Scroll Reveal Animations */
+.section {
+  animation: fadeInUpScale 0.8s ease-out;
+}
+
+.section:nth-child(even) {
+  animation: slideInLeft 0.8s ease-out;
+}
+
+.section:nth-child(odd) {
+  animation: slideInRight 0.8s ease-out;
+}
+
+.section::before {
+  animation: blueprintPulse 6s ease-in-out infinite;
 }
