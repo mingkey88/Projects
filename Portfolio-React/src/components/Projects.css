@@ -45,7 +45,7 @@
   background: #ffffff;
   border-radius: 12px;
   border: 1px solid #e5e7eb;
-  border-left: 6px solid #ef4444;
+  border-left: 6px solid #f59e0b;
   overflow: hidden;
   transition: all 0.3s ease;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
@@ -149,7 +149,7 @@
 .modal-content {
   background: #ffffff;
   border-radius: 16px;
-  border-left: 10px solid #ef4444;
+  border-left: 10px solid #f59e0b;
   width: 75vw;
   height: 75vh;
   max-width: 1200px;

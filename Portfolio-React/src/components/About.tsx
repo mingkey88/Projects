@@ -1,6 +1,8 @@
 import { Github, Linkedin, Twitter, Instagram } from 'lucide-react'
 import './About.css'
 import ReactLogo from '../assets/react.svg'
+import ImageLoader from './ImageLoader'
+import ScrollReveal from './ScrollReveal'
 
 const About = () => {
   const designSkills = [
@@ -53,19 +55,26 @@ const About = () => {
     {
       name: 'PostgreSQL',
       logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg'
+    },
+    {
+      name: 'Prisma ORM',
+      logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/prisma/prisma-original.svg'
     }
   ]
 
   return (
     <section className="section" id="about">
       <div className="container">
-        <div className="section-header">
-          <h2 className="section-title">About Me & Skills</h2>
-          <p className="section-subtitle">Get to know me and what I work with</p>
-        </div>
+        <ScrollReveal>
+          <div className="section-header">
+            <h2 className="section-title">About Me & Skills</h2>
+            <p className="section-subtitle">Get to know me and what I work with</p>
+          </div>
+        </ScrollReveal>
         
         <div className="about-skills-container">
-          <div className="profile-section">
+          <ScrollReveal delay={0.2}>
+            <div className="profile-section">
             <div className="profile-header">
               <div className="profile-info">
                 <h3 className="profile-name">Ming Jie</h3>
@@ -84,7 +93,7 @@ const About = () => {
                         className={`skill-item${skill.upcoming ? ' upcoming' : ''}`}
                         style={{ display: 'flex', alignItems: 'center', gap: '8px' }}
                       >
-                        <img src={skill.logo} alt={skill.name + ' logo'} style={{ width: 24, height: 24 }} />
+                        <ImageLoader src={skill.logo} alt={skill.name + ' logo'} style={{ width: 24, height: 24 }} />
                         <span className="skill-name">{skill.name}</span>
                         {skill.upcoming && (
                           <span className="skill-badge">Upcoming</span>
@@ -114,9 +123,11 @@ const About = () => {
                 </div>
               </div>
             </div>
-          </div>
+            </div>
+          </ScrollReveal>
           
-          <div className="skills-section">
+          <ScrollReveal delay={0.4}>
+            <div className="skills-section">
             <h3 className="skills-section-title">Technologies & Skills</h3>
             <div className="skills-container">
               <div className="skills-category">
@@ -124,7 +135,7 @@ const About = () => {
                 <div className="skills-list">
                   {frontendSkills.map((skill, index) => (
                     <div key={index} className="skill-item" style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                      <img src={skill.logo} alt={skill.name + ' logo'} style={{ width: 24, height: 24 }} />
+                      <ImageLoader src={skill.logo} alt={skill.name + ' logo'} style={{ width: 24, height: 24 }} />
                       <span className="skill-name">{skill.name}</span>
                     </div>
                   ))}
@@ -136,14 +147,15 @@ const About = () => {
                 <div className="skills-list">
                   {backendSkills.map((skill, index) => (
                     <div key={index} className="skill-item" style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                      <img src={skill.logo} alt={skill.name + ' logo'} style={{ width: 24, height: 24 }} />
+                      <ImageLoader src={skill.logo} alt={skill.name + ' logo'} style={{ width: 24, height: 24 }} />
                       <span className="skill-name">{skill.name}</span>
                     </div>
                   ))}
                 </div>
               </div>
             </div>
-          </div>
+            </div>
+          </ScrollReveal>
         </div>
       </div>
     </section>

@@ -5,6 +5,7 @@ import * as THREE from 'three'
 import { ChevronDown } from 'lucide-react'
 import './HeroSection.css'
 import ReactLogo from '../assets/react.svg'
+import ImageLoader from './ImageLoader'
 
 // Particle system component
 function ParticleField() {
@@ -80,7 +81,7 @@ function FloatingIcons() {
   return (
     <div className="floating-icons">
       {techIcons.map((icon, i) => (
-        <img
+        <ImageLoader
           key={icon.name}
           src={typeof icon.logo === 'string' ? icon.logo : icon.logo}
           alt={icon.name + ' logo'}
@@ -138,7 +139,7 @@ const HeroSection = () => {
           </div>
           <div className="hero-profile">
             <div className="hero-profile-image">
-              <img
+              <ImageLoader
                 src="https://cdn.midjourney.com/a02d2257-ca0a-449e-8dd5-26590606305c/0_0.png"
                 alt="Ming Jie"
                 className="hero-avatar"

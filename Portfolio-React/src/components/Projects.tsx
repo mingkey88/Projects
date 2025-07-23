@@ -2,6 +2,8 @@ import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { X, ExternalLink, Github, Calendar, User } from 'lucide-react'
 import './Projects.css'
+import ImageLoader from './ImageLoader'
+import ScrollReveal from './ScrollReveal'
 
 interface Project {
   id: number
@@ -175,12 +177,15 @@ const Projects = () => {
   return (
     <section className="section" id="projects">
       <div className="container">
-        <div className="section-header">
-          <h2 className="section-title">My Projects</h2>
-          <p className="section-subtitle">Explore my recent work</p>
-        </div>
+        <ScrollReveal>
+          <div className="section-header">
+            <h2 className="section-title">My Projects</h2>
+            <p className="section-subtitle">Explore my recent work</p>
+          </div>
+        </ScrollReveal>
         
-        <div className="category-chips">
+        <ScrollReveal delay={0.2}>
+          <div className="category-chips">
           {categories.map(category => (
             <button
               key={category.id}
@@ -190,13 +195,15 @@ const Projects = () => {
               {category.label}
             </button>
           ))}
-        </div>
+          </div>
+        </ScrollReveal>
         
         <div className="projects-grid">
-          {filteredProjects.map(project => (
+          {filteredProjects.map((project, index) => (
+            <ScrollReveal key={project.id} delay={0.1 * index}>
             <div key={project.id} className="project-card">
               <div className="project-image">
-                <img src={project.image} alt={project.title} />
+                <ImageLoader src={project.image} alt={project.title} />
                 <div className="project-overlay">
                   <div className="project-actions">
                     <button 
@@ -220,6 +227,7 @@ const Projects = () => {
                 </div>
               </div>
             </div>
+            </ScrollReveal>
           ))}
         </div>
       </div>
@@ -248,7 +256,7 @@ const Projects = () => {
               </button>
               
               <div className="modal-header">
-                <img 
+                <ImageLoader 
                   src={selectedProject.image} 
                   alt={selectedProject.title}
                   className="modal-image"
